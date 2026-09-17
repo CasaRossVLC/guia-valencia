@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guía local de comida de Valencia - Casa Ross</title>
-    <!-- Google Font Contemporanea -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root { 
-            --colore-principale: #1D3557; /* Azul Mediterráneo profundo */
-            --colore-accento: #E07A5F;   /* Terracota cálido */
-            --sfondo-card: #FFFFFF;       /* Blanco puro para impresión limpia */
-            --testo-grigio: #4A5568;      /* Gris oscuro de alta legibilidad */
+            --colore-principale: #1D3557;
+            --colore-accento: #E07A5F;
+            --sfondo-card: #FFFFFF;
+            --testo-grigio: #4A5568;
         }
         body { font-family: 'Plus Jakarta Sans', sans-serif; color: #2D3748; max-width: 900px; margin: 0 auto; padding: 20px; background-color: #ffffff; line-height: 1.6; }
         .copertina { text-align: center; padding: 45px 20px 25px 20px; border-bottom: 3px solid var(--colore-accento); margin-bottom: 25px; }
@@ -39,7 +38,6 @@
         @media (max-width: 600px) { .griglia { grid-template-columns: 1fr; } .row-img { flex-direction: column; } .row-img.inversa { flex-direction: column; } .img-tipico { width: 100%; } .text-filler { width: 100%; } }
         .card { border: 1px solid #E2E8F0; border-top: 3px solid var(--colore-accento); border-radius: 8px; padding: 16px; background: var(--sfondo-card); display: flex; flex-direction: column; page-break-inside: avoid; box-shadow: 0 2px 6px rgba(0,0,0,0.02); }
         
-        /* Estilo específico para la tarjeta destacada en horizontal */
         .card.destacada { 
             grid-column: span 2; 
             background-color: #FDF8F6; 
@@ -68,7 +66,6 @@
         .qr-immagine { width: 100%; max-width: 105px; height: auto; aspect-ratio: 1 / 1; object-fit: contain; border: 1px solid #E2E8F0; padding: 4px; background: white; border-radius: 6px; margin-bottom: 12px; display: block; margin-left: auto; margin-right: auto; }
         .link-mappe { color: var(--colore-principale); font-weight: 700; text-decoration: none; font-size: 0.75em; text-transform: uppercase; align-self: center; border-bottom: 2px solid var(--colore-accento); padding-bottom: 2px; letter-spacing: 0.5px; }
         
-        /* Pie de página con espacio aumentado, línea separadora y prevención anti-overflow */
         .footer { 
             text-align: center; 
             padding: 15px 20px 10px 20px; 
@@ -88,13 +85,11 @@
             border-radius: 2px;
         }
 
-        /* Reglas específicas para la impresión */
         @media print { 
             body { padding: 0; background-color: white; } 
             .copertina { padding-top: 15px; padding-bottom: 15px; border-bottom: 3px solid var(--colore-accento); margin-bottom: 15px; } 
             .sezione { margin-bottom: 24px; }
 
-            /* Centrado vertical perfecto de las 4 imágenes en la Página 2 */
             .sezione-immagini {
                 page-break-before: always;
                 break-before: page;
@@ -113,12 +108,10 @@
                 gap: 24px;
             }
 
-            /* Compactación controlada de tarjetas para asegurar espacio antes del footer */
             .card { border: 1px solid #CBD5E0; border-top: 3px solid var(--colore-accento); box-shadow: none; padding: 11px 14px; } 
             .descrizione-locale { margin-bottom: 10px; }
             .qr-immagine { max-width: 88px; margin-bottom: 6px; }
 
-            /* Pie de página espacioso y estabilizado sin salto de página */
             .footer { 
                 margin-top: 25px; 
                 padding-top: 12px; 
@@ -146,13 +139,11 @@
         <p class="nota-versione-digitale">Ten en cuenta que la versión en papel se imprime periódicamente, mientras que la versión digital accesible mediante el código QR será siempre la más actualizada.</p>
     </div>
     
-    <!-- Sección de tags colocada en la primera página debajo del QR -->
     <div class="sezione" style="margin-bottom: 25px;">
         <h2 class="titolo-sezione">QUÉ ES TÍPICO DE VALENCIA</h2>
         <div class="griglia-tags" style="margin-top: 15px;"><div class="tag">Paella Valenciana</div><div class="tag">Arroz a banda</div><div class="tag">Arroz al horno</div><div class="tag">Arroz negro</div><div class="tag">Paella del Senyoret</div><div class="tag">All i pebre</div><div class="tag">Esgarraet</div><div class="tag">Fideuà</div><div class="tag">Buñuelos de calabaza</div><div class="tag">Horchata</div><div class="tag">Fartons</div><div class="tag">Agua de Valencia</div><div class="tag">Cremaet</div><div class="tag">Chivito</div><div class="tag">Torrijas de horchata</div><div class="tag">Pollo al ajillo</div><div class="tag">Puchero Valenciano</div><div class="tag">Figatell</div><div class="tag">Coca</div><div class="tag">Pepito</div><div class="tag">Pastelitos de boniato</div><div class="tag">Turrón</div><div class="tag">Blanc i negre</div></div>
     </div>
 
-    <!-- Sección de imágenes forzada a ocupar centrada la página 2 -->
     <div class="sezione sezione-immagini">
         <div class="container-zigzag">
             <div class="row-img"><img src="Bocadillo.jpg" alt="Bocadillo" class="img-tipico"><p class="text-filler">El rey del esmorzaret: el bocadillo valenciano, relleno con productos locales frescos.</p></div>
@@ -307,6 +298,43 @@
             <div class="card"><h3 class="titolo-locale">Sabbia</h3><div class="categoria-locale">LOUNGE DE PLAYA</div><p class="descrizione-locale">Elegante terraza chill out situada directamente frente a la arena de la playa.</p><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fmaps.app.goo.gl%2FDTkKPime1eRPRMFCA" alt="Código QR" class="qr-immagine"><a href="https://maps.app.goo.gl/DTkKPime1eRPRMFCA" class="link-mappe" target="_blank">IR A GOOGLE MAPS</a></div>
         </div>
     </div>
+
+    <!-- SECCIÓN EXTRA -->
+    <div class="sezione" style="page-break-before: always; break-before: page;">
+        <h2 class="titolo-sezione">EXTRA – ALGO RÁPIDO</h2>
+        <p class="descrizione-sezione">Si habéis llegado demasiado tarde y las cocinas de los restaurantes ya han cerrado, o simplemente os apetece algo rápido e informal que no sea el típico McDonald's, aquí tenéis una selección de comida rápida de verdad: porque un kebab, una pizza o una buena hamburguesa también pueden hacerse con mucho mimo y calidad.</p>
+        <div class="griglia">
+            <div class="card">
+                <h3 class="titolo-locale">La Finestra</h3>
+                <div class="categoria-locale">PIZZA RÁPIDA</div>
+                <p class="descrizione-locale">Minipizzas recién horneadas a precios populares, cervezas artesanales y ambiente desenfadado en pleno Ruzafa.</p>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fmaps.app.goo.gl%2FR92x9ySLaiSBdZ2E7" alt="Código QR" class="qr-immagine">
+                <a href="https://maps.app.goo.gl/R92x9ySLaiSBdZ2E7" class="link-mappe" target="_blank">IR A GOOGLE MAPS</a>
+            </div>
+            <div class="card">
+                <h3 class="titolo-locale">Brutal58</h3>
+                <div class="categoria-locale">HAMBURGUESAS GOURMET</div>
+                <p class="descrizione-locale">Hamburguesas jugosas y contundentes preparadas con ingredientes de calidad para comer bien y rápido.</p>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fmaps.app.goo.gl%2FTts5QwRFLxoLBiTs9" alt="Código QR" class="qr-immagine">
+                <a href="https://maps.app.goo.gl/Tts5QwRFLxoLBiTs9" class="link-mappe" target="_blank">IR A GOOGLE MAPS</a>
+            </div>
+            <div class="card">
+                <h3 class="titolo-locale">SMASH & GO (Ruzafa)</h3>
+                <div class="categoria-locale">SMASH BURGERS</div>
+                <p class="descrizione-locale">Smash burgers finas, crujientes y servidas al momento en un local moderno y dinámico.</p>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fmaps.app.goo.gl%2FhYtGbcmj7vCj49sZ9" alt="Código QR" class="qr-immagine">
+                <a href="https://maps.app.goo.gl/hYtGbcmj7vCj49sZ9" class="link-mappe" target="_blank">IR A GOOGLE MAPS</a>
+            </div>
+            <div class="card">
+                <h3 class="titolo-locale">Shawarma Sirio Russafa</h3>
+                <div class="categoria-locale">SHAWARMA Y STREET FOOD</div>
+                <p class="descrizione-locale">Auténtico shawarma sirio marinado con especias tradicionales y pan caliente para una cena rápida y sabrosa a deshoras.</p>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fmaps.app.goo.gl%2F1iuoTRbhQm1ZYGzy7" alt="Código QR" class="qr-immagine">
+                <a href="https://maps.app.goo.gl/1iuoTRbhQm1ZYGzy7" class="link-mappe" target="_blank">IR A GOOGLE MAPS</a>
+            </div>
+        </div>
+    </div>
+
     <div class="footer">
         <h2>¡Buen Provecho!</h2>
         <p>Espero que estas sugerencias hagan tu viaje a Valencia único y lleno de sabores inolvidables.</p>
