@@ -20,7 +20,7 @@
         .data-edizione { font-weight: 700; margin-top: 20px; color: var(--colore-principale); text-transform: uppercase; font-size: 0.9em; display: flex; align-items: center; justify-content: center; gap: 10px; letter-spacing: 0.5px; }
         .badge-lingua { background-color: var(--colore-principale); color: white; padding: 3px 10px; border-radius: 4px; font-size: 0.8em; font-weight: 600; }
         .sezione { margin-bottom: 40px; page-break-inside: avoid; }
-        .sezione-immagini { page-break-before: always; break-before: page; }
+        .sezione-immagini { page-break-before: always; break-before: page; page-break-after: always; break-after: page; }
         .titolo-sezione { font-size: 1.6em; color: var(--colore-principale); border-bottom: 3px solid var(--colore-accento); display: inline-block; margin-bottom: 12px; padding-bottom: 4px; text-transform: uppercase; font-weight: 700; letter-spacing: -0.5px; }
         .descrizione-sezione { margin-bottom: 20px; color: var(--testo-grigio); font-size: 0.95em; }
         .nota-evidenziata { background-color: #FDF8F6; padding: 14px; border-left: 4px solid var(--colore-accento); margin-bottom: 20px; border-radius: 6px; font-size: 0.95em; color: #2D3748; }
@@ -68,32 +68,63 @@
         .qr-immagine { width: 100%; max-width: 105px; height: auto; aspect-ratio: 1 / 1; object-fit: contain; border: 1px solid #E2E8F0; padding: 4px; background: white; border-radius: 6px; margin-bottom: 12px; display: block; margin-left: auto; margin-right: auto; }
         .link-mappe { color: var(--colore-principale); font-weight: 700; text-decoration: none; font-size: 0.75em; text-transform: uppercase; align-self: center; border-bottom: 2px solid var(--colore-accento); padding-bottom: 2px; letter-spacing: 0.5px; }
         
-        /* Pie de página compacto con línea separadora y prevención estricta de salto de página */
+        /* Pie de página con espacio aumentado, línea separadora y prevención anti-overflow */
         .footer { 
             text-align: center; 
-            padding: 12px 20px; 
+            padding: 15px 20px 10px 20px; 
             border-top: 1px solid #E2E8F0; 
-            margin-top: 15px; 
+            margin-top: 35px; 
             color: var(--colore-principale); 
             page-break-inside: avoid;
             break-inside: avoid;
         }
-        .footer h2 { margin: 0 0 4px 0; font-weight: 700; font-size: 1.25em; }
+        .footer h2 { margin: 0 0 6px 0; font-weight: 700; font-size: 1.3em; }
         .footer p { margin: 2px 0; font-size: 0.9em; }
         .linea-separadora-footer {
             width: 45px;
             height: 2px;
             background-color: var(--colore-accento);
-            margin: 6px auto;
+            margin: 8px auto;
             border-radius: 2px;
         }
 
+        /* Reglas específicas para la impresión */
         @media print { 
             body { padding: 0; background-color: white; } 
             .copertina { padding-top: 15px; padding-bottom: 15px; border-bottom: 3px solid var(--colore-accento); margin-bottom: 15px; } 
-            .card { border: 1px solid #CBD5E0; border-top: 3px solid var(--colore-accento); box-shadow: none; padding: 12px; } 
             .sezione { margin-bottom: 24px; }
-            .footer { margin-top: 10px; padding: 8px 0; page-break-inside: avoid; break-inside: avoid; }
+
+            /* Centrado vertical perfecto de las 4 imágenes en la Página 2 */
+            .sezione-immagini {
+                page-break-before: always;
+                break-before: page;
+                page-break-after: always;
+                break-after: page;
+                min-height: 86vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            .sezione-immagini .container-zigzag {
+                margin-top: auto;
+                margin-bottom: auto;
+                gap: 24px;
+            }
+
+            /* Compactación controlada de tarjetas para asegurar espacio antes del footer */
+            .card { border: 1px solid #CBD5E0; border-top: 3px solid var(--colore-accento); box-shadow: none; padding: 11px 14px; } 
+            .descrizione-locale { margin-bottom: 10px; }
+            .qr-immagine { max-width: 88px; margin-bottom: 6px; }
+
+            /* Pie de página espacioso y estabilizado sin salto de página */
+            .footer { 
+                margin-top: 25px; 
+                padding-top: 12px; 
+                page-break-inside: avoid; 
+                break-inside: avoid; 
+            }
         }
     </style>
 </head>
@@ -121,7 +152,7 @@
         <div class="griglia-tags" style="margin-top: 15px;"><div class="tag">Paella Valenciana</div><div class="tag">Arroz a banda</div><div class="tag">Arroz al horno</div><div class="tag">Arroz negro</div><div class="tag">Paella del Senyoret</div><div class="tag">All i pebre</div><div class="tag">Esgarraet</div><div class="tag">Fideuà</div><div class="tag">Buñuelos de calabaza</div><div class="tag">Horchata</div><div class="tag">Fartons</div><div class="tag">Agua de Valencia</div><div class="tag">Cremaet</div><div class="tag">Chivito</div><div class="tag">Torrijas de horchata</div><div class="tag">Pollo al ajillo</div><div class="tag">Puchero Valenciano</div><div class="tag">Figatell</div><div class="tag">Coca</div><div class="tag">Pepito</div><div class="tag">Pastelitos de boniato</div><div class="tag">Turrón</div><div class="tag">Blanc i negre</div></div>
     </div>
 
-    <!-- Sección de imágenes forzada a empezar en la página 2 -->
+    <!-- Sección de imágenes forzada a ocupar centrada la página 2 -->
     <div class="sezione sezione-immagini">
         <div class="container-zigzag">
             <div class="row-img"><img src="Bocadillo.jpg" alt="Bocadillo" class="img-tipico"><p class="text-filler">El rey del esmorzaret: el bocadillo valenciano, relleno con productos locales frescos.</p></div>
