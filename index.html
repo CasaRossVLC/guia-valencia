@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guía de comida local de Valencia - Casa Ross</title>
+    <title>Guía local de comida de Valencia - Casa Ross</title>
     <!-- Google Font Contemporanea -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root { 
-            --colore-principale: #1D3557; /* Blu Mediterraneo profondo */
-            --colore-accento: #E07A5F;   /* Arancione Terracotta pastello caldo */
-            --sfondo-card: #FFFFFF;       /* Bianco puro per risparmiare inchiostro in stampa */
-            --testo-grigio: #4A5568;      /* Grigio scuro ad alta leggibilità */
+            --colore-principale: #1D3557; /* Azul Mediterráneo profundo */
+            --colore-accento: #E07A5F;   /* Terracota cálido */
+            --sfondo-card: #FFFFFF;       /* Blanco puro para impresión limpia */
+            --testo-grigio: #4A5568;      /* Gris oscuro de alta legibilidad */
         }
         body { font-family: 'Plus Jakarta Sans', sans-serif; color: #2D3748; max-width: 900px; margin: 0 auto; padding: 20px; background-color: #ffffff; line-height: 1.6; }
-        .copertina { text-align: center; padding: 50px 20px; border-bottom: 3px solid var(--colore-accento); margin-bottom: 30px; }
+        .copertina { text-align: center; padding: 45px 20px 25px 20px; border-bottom: 3px solid var(--colore-accento); margin-bottom: 25px; }
         .copertina h1 { font-size: 2.6em; color: var(--colore-principale); margin-bottom: 8px; text-transform: uppercase; letter-spacing: -0.5px; font-weight: 700; }
         .copertina p { font-size: 1.1em; color: var(--testo-grigio); margin-bottom: 15px; }
         .data-edizione { font-weight: 700; margin-top: 20px; color: var(--colore-principale); text-transform: uppercase; font-size: 0.9em; display: flex; align-items: center; justify-content: center; gap: 10px; letter-spacing: 0.5px; }
         .badge-lingua { background-color: var(--colore-principale); color: white; padding: 3px 10px; border-radius: 4px; font-size: 0.8em; font-weight: 600; }
-        .sezione { margin-bottom: 45px; page-break-inside: avoid; }
+        .sezione { margin-bottom: 40px; page-break-inside: avoid; }
         .sezione-immagini { page-break-before: always; break-before: page; }
         .titolo-sezione { font-size: 1.6em; color: var(--colore-principale); border-bottom: 3px solid var(--colore-accento); display: inline-block; margin-bottom: 12px; padding-bottom: 4px; text-transform: uppercase; font-weight: 700; letter-spacing: -0.5px; }
         .descrizione-sezione { margin-bottom: 20px; color: var(--testo-grigio); font-size: 0.95em; }
@@ -67,9 +67,34 @@
         .descrizione-locale { font-size: 0.9em; color: var(--testo-grigio); margin-bottom: 15px; flex-grow: 1; }
         .qr-immagine { width: 100%; max-width: 105px; height: auto; aspect-ratio: 1 / 1; object-fit: contain; border: 1px solid #E2E8F0; padding: 4px; background: white; border-radius: 6px; margin-bottom: 12px; display: block; margin-left: auto; margin-right: auto; }
         .link-mappe { color: var(--colore-principale); font-weight: 700; text-decoration: none; font-size: 0.75em; text-transform: uppercase; align-self: center; border-bottom: 2px solid var(--colore-accento); padding-bottom: 2px; letter-spacing: 0.5px; }
-        .footer { text-align: center; padding: 35px 20px; border-top: 1px solid #E2E8F0; margin-top: 50px; color: var(--colore-principale); }
-        .footer h2 { margin-bottom: 8px; font-weight: 700; }
-        @media print { body { padding: 0; background-color: white; } .copertina { padding-top: 20px; border-bottom: 3px solid var(--colore-accento); } .card { border: 1px solid #CBD5E0; border-top: 3px solid var(--colore-accento); box-shadow: none; } }
+        
+        /* Pie de página compacto con línea separadora y prevención estricta de salto de página */
+        .footer { 
+            text-align: center; 
+            padding: 12px 20px; 
+            border-top: 1px solid #E2E8F0; 
+            margin-top: 15px; 
+            color: var(--colore-principale); 
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+        .footer h2 { margin: 0 0 4px 0; font-weight: 700; font-size: 1.25em; }
+        .footer p { margin: 2px 0; font-size: 0.9em; }
+        .linea-separadora-footer {
+            width: 45px;
+            height: 2px;
+            background-color: var(--colore-accento);
+            margin: 6px auto;
+            border-radius: 2px;
+        }
+
+        @media print { 
+            body { padding: 0; background-color: white; } 
+            .copertina { padding-top: 15px; padding-bottom: 15px; border-bottom: 3px solid var(--colore-accento); margin-bottom: 15px; } 
+            .card { border: 1px solid #CBD5E0; border-top: 3px solid var(--colore-accento); box-shadow: none; padding: 12px; } 
+            .sezione { margin-bottom: 24px; }
+            .footer { margin-top: 10px; padding: 8px 0; page-break-inside: avoid; break-inside: avoid; }
+        }
     </style>
 </head>
 <body>
@@ -218,7 +243,7 @@
             <div class="card"><h3 class="titolo-locale">MAUI</h3><div class="categoria-locale">FUSIÓN</div><p class="descrizione-locale">Tapas creativas y cócteles vibrantes.</p><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fwww.google.com%2Fmaps%2Fsearch%2F%3Fapi%3D1%26query%3DMAUI%2BRuzafa%2BValencia" alt="Código QR" class="qr-immagine"><a href="https://www.google.com/maps/search/?api=1&query=MAUI+Ruzafa+Valencia" class="link-mappe" target="_blank">IR A GOOGLE MAPS</a></div>
             <div class="card"><h3 class="titolo-locale">Amor Amargo</h3><div class="categoria-locale">VERMUT</div><p class="descrizione-locale">El templo del vermut y las tapas de calidad.</p><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fwww.google.com%2Fmaps%2Fsearch%2F%3Fapi%3D1%26query%3DAmor%2BAmargo%2BValencia" alt="Código QR" class="qr-immagine"><a href="https://www.google.com/maps/search/?api=1&query=Amor+Amargo+Valencia" class="link-mappe" target="_blank">IR A GOOGLE MAPS</a></div>
             <div class="card"><h3 class="titolo-locale">Aladroc</h3><div class="categoria-locale">PESCADO</div><p class="descrizione-locale">Taberna marinera de pescado fresco y auténtico.</p><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fwww.google.com%2Fmaps%2Fsearch%2F%3Fapi%3D1%26query%3DAladroc%2BValencia" alt="Código QR" class="qr-immagine"><a href="https://www.google.com/maps/search/?api=1&query=Aladroc+Valencia" class="link-mappe" target="_blank">IR A GOOGLE MAPS</a></div>
-            <div class="card"><h3 class="titolo-locale">El Rodamón de Russafa</h3><div class="categoria-locale">TAPAS • VIAJERAS</div><p class="descrizione-locale">Tapas creativas con influencias del mundo y productos de mercado en un ambiente íntimo.</p><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fmaps.app.goo.gl%2FkAiH5ZTfL34ea2rk7" alt="Código QR" class="qr-immagine"><a href="https://maps.app.goo.gl/kAiH5ZTfL34ea2rk7" class="link-mappe" target="_blank">IR A GOOGLE MAPS</a></div>
+            <div class="card"><h3 class="titolo-locale">El Rodamón de Russafa</h3><div class="categoria-locale">TAPAS VIAJERAS</div><p class="descrizione-locale">Tapas creativas con influencias del mundo y productos de mercado en un ambiente íntimo.</p><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fmaps.app.goo.gl%2FkAiH5ZTfL34ea2rk7" alt="Código QR" class="qr-immagine"><a href="https://maps.app.goo.gl/kAiH5ZTfL34ea2rk7" class="link-mappe" target="_blank">IR A GOOGLE MAPS</a></div>
             <div class="card"><h3 class="titolo-locale">Bocamada</h3><div class="categoria-locale">ELEGANTE</div><p class="descrizione-locale">Cocina mediterránea cuidada al detalle.</p><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fwww.google.com%2Fmaps%2Fsearch%2F%3Fapi%3D1%26query%3DBocamada%2BValencia" alt="Código QR" class="qr-immagine"><a href="https://www.google.com/maps/search/?api=1&query=Bocamada+Valencia" class="link-mappe" target="_blank">IR A GOOGLE MAPS</a></div>
             <div class="card"><h3 class="titolo-locale">La Pichurrita</h3><div class="categoria-locale">TAPAS</div><p class="descrizione-locale">Tapas sabrosas y ambiente animado, perfecto para una noche en compañía.</p><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fmaps.app.goo.gl%2FKsa8KHxhcNnQRAhYA" alt="Código QR" class="qr-immagine"><a href="https://maps.app.goo.gl/Ksa8KHxhcNnQRAhYA" class="link-mappe" target="_blank">IR A GOOGLE MAPS</a></div>
             <div class="card"><h3 class="titolo-locale">Bar Congo</h3><div class="categoria-locale">BAR Y TAPAS</div><p class="descrizione-locale">Un bar acogedor con un servicio excelente, ideal para disfrutar de tapas tradicionales y buena cerveza.</p><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https%3A%2F%2Fmaps.app.goo.gl%2F7CgJPziRvJ2Hoygj6" alt="Código QR" class="qr-immagine"><a href="https://maps.app.goo.gl/7CgJPziRvJ2Hoygj6" class="link-mappe" target="_blank">IR A GOOGLE MAPS</a></div>
@@ -254,6 +279,7 @@
     <div class="footer">
         <h2>¡Buen Provecho!</h2>
         <p>Espero que estas sugerencias hagan tu viaje a Valencia único y lleno de sabores inolvidables.</p>
+        <div class="linea-separadora-footer"></div>
         <p><strong>Casa Ross Valencia</strong><br>Guía local de comida, 2026</p>
     </div>
 </body>
